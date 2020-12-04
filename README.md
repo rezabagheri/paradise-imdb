@@ -3,7 +3,9 @@ A  plugin to create movie database, grab movie info from imdb(not complete!)
 
 # Todos:
 - [ ] Activation
-    - [ ] PostTypes Class
+    - [ ] PostTypes
+        - [ ] Movie
+        - [ ] Human
 - [ ] Deactivation
 - [ ] Uninstall
 - [ ] Init Composer
