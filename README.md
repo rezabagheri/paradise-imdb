@@ -11,6 +11,6 @@ A  plugin to create movie database, grab movie info from imdb(not complete!)
     - [ ] Flash rewrite rules
 - [ ] Uninstall
     - [ ] Delete PostTypes
-- [ ] Init Composer
+- [X] Init Composer
 - [ ] Init Class
 - [ ] ...
