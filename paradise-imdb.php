@@ -10,5 +10,16 @@ Version: 1.0.0
 Author: Reza Bagheri( Rezo ) | <a href = "mailto: rezabagheri@gmail.com">Send Email to author</a>
 Author URI: https://www.paradisecyber.com/whoami
 License: GPL3 or later
-Text Domain: paradise-imdb
+Text Domain: paradise-imdb 
 */
+
+
+defined( 'ABSPATH' ) or die( 'Hey!, What are you doing here?, Your silly human!' );
+
+class ParadiseIMDB {
+
+}
+
+if( class_exists( 'ParadiseIMDB') ) {
+    $paradiseIMDB = new ParadiseIMDB();
+}
