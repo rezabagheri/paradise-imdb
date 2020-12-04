@@ -1,0 +1,17 @@
+{
+    "name": "reza/paradise-imdb",
+    "description": "A plugin to create movie database, grab movie info from imdb",
+    "type": "project",
+    "license": "GPL3",
+    "authors": [{
+        "name": "reza bagheri",
+        "email": "rezabagheri@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "./inc"
+        }
+    }
+}
