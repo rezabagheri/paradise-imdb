@@ -18,8 +18,27 @@ defined( 'ABSPATH' ) or die( 'Hey!, What are you doing here?, Your silly human!'
 
 class ParadiseIMDB {
 
+    function Avtivate() 
+    {
+
+    }
+
+    function DeActivate()
+    {
+
+    }
+
+    function Uninstall()
+    {
+
+    }
+
 }
+
 
 if( class_exists( 'ParadiseIMDB') ) {
     $paradiseIMDB = new ParadiseIMDB();
 }
+
+register_activation_hook( __FILE__, [ $paradiseIMDB, "Activation" ] );
+register_deactivation_hook( __FILE__, [ $paradiseIMDB, "DeActivation"] );
