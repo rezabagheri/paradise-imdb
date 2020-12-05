@@ -19,30 +19,33 @@ if( file_exists( dirname(__FILE__). '/vendor/autoload.php' ) ) {
     require_once( dirname(__FILE__). '/vendor/autoload.php' );
 }
 
-
-class ParadiseIMDB {
-
-    function Avtivate() 
-    {
-
-    }
-
-    function DeActivate()
-    {
-
-    }
-
-    function Uninstall()
-    {
-
-    }
-
+if( class_exists( 'Inc\\Init') ) {
+    Inc\Init::register_services();
 }
 
+// class ParadiseIMDB {
 
-if( class_exists( 'ParadiseIMDB') ) {
-    $paradiseIMDB = new ParadiseIMDB();
-}
+//     function Avtivate() 
+//     {
 
-register_activation_hook( __FILE__, [ $paradiseIMDB, "Activation" ] );
-register_deactivation_hook( __FILE__, [ $paradiseIMDB, "DeActivation"] );
+//     }
+
+//     function DeActivate()
+//     {
+
+//     }
+
+//     function Uninstall()
+//     {
+
+//     }
+
+// }
+
+
+// if( class_exists( 'ParadiseIMDB') ) {
+//     $paradiseIMDB = new ParadiseIMDB();
+// }
+
+// register_activation_hook( __FILE__, [ $paradiseIMDB, "Activation" ] );
+// register_deactivation_hook( __FILE__, [ $paradiseIMDB, "DeActivation"] );
