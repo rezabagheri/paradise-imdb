@@ -10,7 +10,8 @@ final class Init
     public static function get_services()
     {
         return [
-
+            PostTypes\TestM::class,
+            PostTypes\Person1::class,
         ];
     }
     

@@ -3,12 +3,11 @@
  * @package ParadiseIMDB
  */
 
-namespace Inc/Base;
+namespace Inc\Core;
 
-class Deactivate 
+class Activate
 {
-
-    public static function deactivate()
+    public static function activate()
     {
         flush_rewrite_rules();
     }
