@@ -10,8 +10,10 @@ final class Init
     public static function get_services()
     {
         return [
+            Core\Enqueue::class,
             PostTypes\TestM::class,
             PostTypes\Person1::class,
+            MetaBoxs\PersonInfo::class,
         ];
     }
     

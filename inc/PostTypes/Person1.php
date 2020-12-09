@@ -25,6 +25,6 @@ class Person1 extends PostType
 
     $this->args['supports'] = $this->supports;
     $this->args['taxonomies'] = $this->taxonomies;
-    $this->name = "Person1";
+    $this->name = "person1";
     }
 }
