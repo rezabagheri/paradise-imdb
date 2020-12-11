@@ -25,11 +25,12 @@ class InputField extends Field
         
         if( isset( $this->options['show_label'] )) {
             //echo 'render_label';
+            $labelClass = "col-sm-2 col-form-label ";
             if( $this->options['show_label'] == true) {
-                $labelClass = isset( $this->options['label_class']) ? 
-                        " class='" .$this->options['label_class']. "' " : 
+                $labelClass .= isset( $this->options['label_class']) ? 
+                         $this->options['label_class'] : 
                         "";
-                echo "<label for='$this->id' $labelClass>$this->label :</label>";
+                echo "<label for='$this->id' class= '$labelClass'>$this->label</label>";
             }
         }
 
@@ -44,6 +45,9 @@ class InputField extends Field
         
         $field_class = "form-control ";
         $place_hoder = "";
+
+        $value = $this->get_value();
+
         if( isset( $this->options['field_class'] ) ){
             $field_class .= $this->options['field_class'];
         }
@@ -52,14 +56,27 @@ class InputField extends Field
         }
 
         
-        echo "<input type = '$this->type' id='$this->id' name='$this->name' class ='$field_class' $place_hoder $readOnly/>";
+        echo "<input type = '$this->type' id='$this->id' name='$this->name' class ='$field_class' $place_hoder $readOnly value='$value'/>";
+        
+       
     }
 
     public function render()
     {
-        echo '<div class="mb-3">';
-        $this->render_label();
-        $this->render_field();
+        echo '<div class="row mb-3">';
+            $this->render_label();
+            echo '<div class="col-sm-10">';
+                $this->render_field();
+            echo '</div>';
         echo '</div>';
+       
+    }
+
+    public function save_field( $post_id )
+    {
+        if ( isset( $_POST[ $this->id ] ) ) {
+            //$sanitized = sanitize_email( $_POST[ $this->id ] );
+            update_post_meta( $post_id, $this->id, $_POST[ $this->id ] );
+            }
     }
 }

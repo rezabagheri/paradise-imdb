@@ -25,10 +25,10 @@ class PersonInfo extends MetaBox
             "priority"      => 'low',
             ]);
     
-            $input1 = new InputField(
-                'input1', 
-                'Input 1',
-                'input1_n',
+            $first_name = new InputField(
+                'first_name', 
+                'First Name',
+                'first_name',
                 'text',
                 [
                     'show_label' => true,
@@ -38,20 +38,22 @@ class PersonInfo extends MetaBox
                     //'read_only' => true
                 ]
             );
-
-            $btn1 = new InputField(
-                'btn1', 
-                'Btn 1',
-                'Btn_1',
-                'number',
+            $last_name = new InputField(
+                'last_name', 
+                'Last Name',
+                'last_name',
+                'text',
                 [
-                    'show_label' => false,
+                    'show_label' => true,
                     'label_class' => 'Label-class',
                     'field_class' => 'field-class',
+                    'place_holder' => "Last Name",
                     //'read_only' => true
                 ]
             );
-            $this->add_field( $input1 )->add_field( $btn1 );
+
+            $this->add_field( $first_name );
+            $this->add_field( $last_name );
        }
 
     

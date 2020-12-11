@@ -11,6 +11,7 @@ class Field
     public $label;
     
     public $options;
+    public $default;
 
     
     public function __construct( $id, $label, $name, $options = [] )
@@ -26,5 +27,16 @@ class Field
         
     }
 
-    
+    public function get_value( ) {
+        global $post;
+        
+		if ( metadata_exists( 'post', $post->ID, $this->id ) ) {
+            $value = get_post_meta( $post->ID, $this->id, true );
+		} else if ( isset( $this->default ) ) {
+			$value = $this->default;
+		} else {
+			return '';
+		}
+        return str_replace( '\u0027', "'", $value );
+	}
 }
